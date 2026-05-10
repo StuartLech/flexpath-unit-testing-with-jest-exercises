@@ -2,6 +2,9 @@
 
 Exercise 1:
 
+Answer:
+Unit tests verify that individual functions like addBook and removeBook work correctly in isolation. They catch bugs early, document expected behavior, and make future changes safer. In the SDLC, these tests are written during development and run repeatedly as part of local checks or CI/CD before changes are shipped.
+
 Question: 
 
 Explain the purpose of unit tests in the context of the `addBook` and 
@@ -12,6 +15,9 @@ How do unit tests fit into the software development lifecycle for this module?
 
 
 Exercise 2:
+
+Answer:
+Manual testing means a person calls findBooksByAuthor and checks the result by hand. Automated unit testing uses repeatable test scripts that run quickly and consistently. Automated tests are better here because they can cover multiple authors, empty results, and repeated changes without relying on a human to retest everything.
 
 Question: 
 
@@ -82,6 +88,9 @@ various functions in bookManager.js.
 
 Exercise 9:
 
+Answer:
+toBe checks strict identity, so two object variables only pass if they point to the exact same object reference. toEqual checks deep equality by comparing object values. toStrictEqual is stricter than toEqual because it also checks things like undefined properties and object types. See tests/exercise9.test.js for working examples.
+
 Question: 
 
 Explain the differences between strict and loose equality checks in Jest, 
@@ -129,6 +138,9 @@ Use spies to monitor calls to addBook and assert they were called correctly.
 
 Exercise 14:
 
+Answer:
+Run coverage with `npm test -- --coverage`. The report shows statement coverage, branch coverage, function coverage, and line coverage. These metrics show which parts of bookManager.js are exercised by the test suite.
+
 Question: 
 
 Measure code coverage and understand metrics like statement, 
@@ -139,6 +151,9 @@ Run Jest to generate a coverage report for bookManager.js.
 
 
 Exercise 15:
+
+Answer:
+The threshold configuration is documented in jest.config.js. It sets minimum coverage targets of 90% for statements, functions, and lines, plus 80% for branches. When enabled and run with coverage, Jest fails if coverage drops below those thresholds.
 
 Question: 
 
@@ -152,6 +167,9 @@ and 80% for branches in jest.config.js.
 
 Exercise 16:
 
+Answer:
+Statement coverage shows whether executable statements ran. Branch coverage checks if alternate paths such as if/else branches ran. Function coverage confirms functions were called. Line coverage reports executed source lines. Together, they reveal untested areas and help assess confidence in bookManager.js.
+
 Question: 
 
 Explain how code coverage metrics like statement, branch, function, 
@@ -161,6 +179,9 @@ and line coverage help in assessing code quality for bookManager.js.
 
 Exercise 17:
 
+Answer:
+Coverage thresholds define the minimum acceptable test coverage. They enforce quality by causing the test run to fail when coverage falls below the target, which helps prevent poorly tested changes from being accepted.
+
 Question: 
 
 Discuss the importance of code coverage thresholds and how they 
@@ -169,6 +190,9 @@ enforce code quality in a project like bookManager.js.
 
 
 Exercise 18:
+
+Answer:
+jest.config.js uses `collectCoverageFrom: ["bookManager.js"]`, so coverage collection focuses only on bookManager.js and excludes test files or other directories.
 
 Question: 
 
